@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="" />
+    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/infnet/pages/FuncionarioListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/infnet/pages/FuncionarioListPage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +15,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "NicolasMendezLinke"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NicolasMendezLinke/PB_tp5_test.git",
+    "accountId": "a26d220a-f321-4612-b3a8-86e3bd446c4f"
+  }
+}]]></component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -89,7 +103,7 @@
       <workItem from="1764940158277" duration="1271000" />
       <workItem from="1764941472134" duration="35000" />
       <workItem from="1765022684725" duration="292000" />
-      <workItem from="1765023113630" duration="203000" />
+      <workItem from="1765023113630" duration="921000" />
     </task>
     <servers />
   </component>
