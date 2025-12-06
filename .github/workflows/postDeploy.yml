@@ -3,11 +3,8 @@ name: Selenium Post-Deploy Tests
 on:
   workflow_run:
     workflows: ["CI-CD Pipeline"]
-    types:
-      - completed
-    branches:
-      - main
-      - master
+    types: [completed]
+    branches: [main, master]
 
 jobs:
   selenium_tests:
@@ -26,31 +23,43 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Instalar Maven
+        run: sudo apt-get update && sudo apt-get install -y maven
+
       - name: Instalar Google Chrome
         run: |
           sudo apt-get update
           sudo apt-get install -y wget gnupg unzip
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /usr/share/keyrings/google-linux-signing-key.gpg >/dev/null
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux-signing-key.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
+            | sudo tee /etc/apt/sources.list.d/google-chrome.list
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Instalar ChromeDriver compatível
+      - name: Instalar ChromeDriver compatível (novo endpoint oficial)
         run: |
-          CHROME_VERSION=$(google-chrome --version | sed 's/[^0-9.]//g')
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
           CHROME_MAJOR=$(echo $CHROME_VERSION | cut -d '.' -f 1)
-          DRIVER_VERSION=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAJOR)
-          wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/chromedriver
+
+          DRIVER_VERSION=$(wget -qO- "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_MAJOR")
+          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$DRIVER_VERSION/linux64/chromedriver-linux64.zip"
+
+          unzip chromedriver-linux64.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
+
+      - name: Compilar aplicação
+        run: mvn -B -DskipTests package
 
       - name: Subir aplicação em background
         run: |
           nohup java -jar target/*.jar > selenium-server.log 2>&1 &
-          sleep 8
+          echo "Aguardando aplicação subir..."
+          sleep 15
 
       - name: Rodar testes Selenium
+        env:
+          SELENIUM_HEADLESS: true
         run: mvn test -Dtest=*WebTest -Dselenium.headless=true
 
       - name: Upload de screenshots de falhas
