@@ -27,26 +27,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y maven
 
       - name: Instalar Google Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg unzip
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /usr/share/keyrings/google-linux-signing-key.gpg >/dev/null
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux-signing-key.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
-            | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+        uses: browser-actions/setup-chrome@v1
 
-      - name: Instalar ChromeDriver compatível (novo endpoint oficial)
-        run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
-          CHROME_MAJOR=$(echo $CHROME_VERSION | cut -d '.' -f 1)
-
-          DRIVER_VERSION=$(wget -qO- "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_MAJOR")
-          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$DRIVER_VERSION/linux64/chromedriver-linux64.zip"
-
-          unzip chromedriver-linux64.zip
-          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
+      - name: Instalar ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
 
       - name: Compilar aplicação
         run: mvn -B -DskipTests package
@@ -58,8 +42,6 @@ jobs:
           sleep 15
 
       - name: Rodar testes Selenium
-        env:
-          SELENIUM_HEADLESS: true
         run: mvn test -Dtest=*WebTest -Dselenium.headless=true
 
       - name: Upload de screenshots de falhas
@@ -74,4 +56,3 @@ jobs:
         with:
           name: selenium-post-deploy-logs
           path: selenium-server.log
-
