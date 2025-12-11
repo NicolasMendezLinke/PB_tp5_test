@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="Concertando Rubrica - testes avançados">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/FuncionarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/FuncionarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/infnet/tests/FuncionarioAdvancedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/infnet/tests/FuncionarioAdvancedTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="Concertando Rubrica - Fail early e Gracefully" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +189,7 @@
       <workItem from="1765022684725" duration="292000" />
       <workItem from="1765023113630" duration="4249000" />
       <workItem from="1765040868706" duration="785000" />
-      <workItem from="1765466777985" duration="6024000" />
+      <workItem from="1765466777985" duration="6388000" />
     </task>
     <task id="LOCAL-00001" summary="testando">
       <option name="closed" value="true" />
@@ -227,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765472054482</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Concertando Rubrica - Fail early e Gracefully">
+      <option name="closed" value="true" />
+      <created>1765473198794</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765473198794</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +240,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testando" />
     <MESSAGE value="Concertando Rubrica - testes avançados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Concertando Rubrica - testes avançados" />
+    <MESSAGE value="Concertando Rubrica - Fail early e Gracefully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Concertando Rubrica - Fail early e Gracefully" />
   </component>
 </project>

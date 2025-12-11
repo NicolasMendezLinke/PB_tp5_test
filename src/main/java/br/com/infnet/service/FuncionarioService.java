@@ -102,7 +102,7 @@ public class FuncionarioService {
     public List<Funcionario> listar() {
         return Collections.unmodifiableList(funcionarios);
     }
-
+    //test
     // FAIL GRACEFULLY NA REDE
     public String sincronizarComServidor() {
 
