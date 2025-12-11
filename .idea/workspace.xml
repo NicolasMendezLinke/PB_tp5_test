@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="Concertando Rubrica - Fail early e Gracefully" />
+    <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="Concertando Rubrica - Fail early e Gracefully">
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/infnet/tests/FuncionarioFuzzTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/infnet/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/infnet/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/RedeSimulada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/RedeSimulada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/service/FuncionarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/service/FuncionarioService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +62,11 @@
     "JUnit.FuncionarioAdvancedTest.testEntradaInvalida.executor": "Run",
     "JUnit.FuncionarioAdvancedTest.testSimulacaoFalhaDeRede.executor": "Run",
     "JUnit.FuncionarioAdvancedTest.testTimeoutSimulado.executor": "Run",
+    "JUnit.FuncionarioFuzzNomeTest.executor": "Run",
+    "JUnit.FuncionarioFuzzTest.executor": "Run",
+    "JUnit.FuncionarioFuzzTest.fuzzAddFuncionario.executor": "Run",
+    "JUnit.FuncionarioFuzzTest.fuzzTestCriacaoFuncionario.executor": "Run",
+    "JUnit.FuncionarioFuzzTest.fuzzTestSincronizacaoComRedeAleatoria.executor": "Run",
     "JUnit.FuncionarioUnitTest.executor": "Run",
     "JUnit.FuncionarioWebTest.executor": "Run",
     "Maven.PB_tp2_v2 [clean].executor": "Run",
@@ -73,8 +85,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.FuncionarioAdvancedTest">
-    <configuration name="FuncionarioAdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FuncionarioFuzzTest">
+    <configuration name="FuncionarioFuzzNomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PB_tp2_v2" />
       <extension name="coverage">
         <pattern>
@@ -83,13 +95,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioFuzzNomeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioAdvancedTest.deveRetornarFalhaQuandoOcorreFalhaDeRede" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioFuzzTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PB_tp2_v2" />
       <extension name="coverage">
         <pattern>
@@ -98,14 +110,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
-      <option name="METHOD_NAME" value="deveRetornarFalhaQuandoOcorreFalhaDeRede" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioFuzzTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioFuzzTest.fuzzAddFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PB_tp2_v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioFuzzTest" />
+      <option name="METHOD_NAME" value="fuzzAddFuncionario" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioAdvancedTest.deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioFuzzTest.fuzzTestCriacaoFuncionario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PB_tp2_v2" />
       <extension name="coverage">
         <pattern>
@@ -114,14 +141,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
-      <option name="METHOD_NAME" value="deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioFuzzTest" />
+      <option name="METHOD_NAME" value="fuzzTestCriacaoFuncionario" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionarioAdvancedTest.testEntradaInvalida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioFuzzTest.fuzzTestSincronizacaoComRedeAleatoria" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PB_tp2_v2" />
       <extension name="coverage">
         <pattern>
@@ -130,24 +157,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
-      <option name="METHOD_NAME" value="testEntradaInvalida" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FuncionarioAdvancedTest.testTimeoutSimulado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PB_tp2_v2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.infnet.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
-      <option name="METHOD_NAME" value="testTimeoutSimulado" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioFuzzTest" />
+      <option name="METHOD_NAME" value="fuzzTestSincronizacaoComRedeAleatoria" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FuncionarioAdvancedTest" />
-        <item itemvalue="JUnit.FuncionarioAdvancedTest.testTimeoutSimulado" />
-        <item itemvalue="JUnit.FuncionarioAdvancedTest.deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" />
-        <item itemvalue="JUnit.FuncionarioAdvancedTest.deveRetornarFalhaQuandoOcorreFalhaDeRede" />
-        <item itemvalue="JUnit.FuncionarioAdvancedTest.testEntradaInvalida" />
+        <item itemvalue="JUnit.FuncionarioFuzzTest" />
+        <item itemvalue="JUnit.FuncionarioFuzzNomeTest" />
+        <item itemvalue="JUnit.FuncionarioFuzzTest.fuzzAddFuncionario" />
+        <item itemvalue="JUnit.FuncionarioFuzzTest.fuzzTestCriacaoFuncionario" />
+        <item itemvalue="JUnit.FuncionarioFuzzTest.fuzzTestSincronizacaoComRedeAleatoria" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +200,7 @@
       <workItem from="1765022684725" duration="292000" />
       <workItem from="1765023113630" duration="4249000" />
       <workItem from="1765040868706" duration="785000" />
-      <workItem from="1765466777985" duration="6388000" />
+      <workItem from="1765466777985" duration="10723000" />
     </task>
     <task id="LOCAL-00001" summary="testando">
       <option name="closed" value="true" />
@@ -231,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765473198794</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Concertando Rubrica - Fail early e Gracefully">
+      <option name="closed" value="true" />
+      <created>1765473359727</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765473359727</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
