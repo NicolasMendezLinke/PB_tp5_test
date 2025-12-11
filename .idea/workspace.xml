@@ -5,28 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486e6aa7-e65d-40ab-a823-4160fca7b92c" name="Changes" comment="testando">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/RedeSimulada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/infnet/tests/FuncionarioAdvancedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/FuncionarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/infnet/service/FuncionarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/controller/FuncionarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/controller/FuncionarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/model/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/model/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/service/FuncionarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/service/FuncionarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/infnet/view/FuncionarioView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/infnet/view/FuncionarioView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/infnet/pages/FuncionarioFormPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/infnet/pages/FuncionarioFormPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/infnet/pages/FuncionarioListPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/infnet/pages/FuncionarioListPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/infnet/tests/FuncionarioUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/infnet/tests/FuncionarioUnitTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/infnet/tests/FuncionarioWebTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/com/infnet/tests/FuncionarioWebTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "NicolasMendezLinke"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NicolasMendezLinke&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/NicolasMendezLinke/PB_tp5_test.git",
-    "accountId": "a26d220a-f321-4612-b3a8-86e3bd446c4f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NicolasMendezLinke/PB_tp5_test.git&quot;,
+    &quot;accountId&quot;: &quot;a26d220a-f321-4612-b3a8-86e3bd446c4f&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -34,6 +54,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="36QYEmSKJGTh9u1l6mYNjUg5HH6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,6 +64,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.deveRetornarFalhaQuandoOcorreFalhaDeRede.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.testEntradaInvalida.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.testSimulacaoFalhaDeRede.executor": "Run",
+    "JUnit.FuncionarioAdvancedTest.testTimeoutSimulado.executor": "Run",
     "JUnit.FuncionarioUnitTest.executor": "Run",
     "JUnit.FuncionarioWebTest.executor": "Run",
     "Maven.PB_tp2_v2 [clean].executor": "Run",
@@ -59,16 +88,82 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.infnet.Main" />
+  <component name="RunManager" selected="JUnit.FuncionarioAdvancedTest">
+    <configuration name="FuncionarioAdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PB_tp2_v2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.infnet.*" />
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioAdvancedTest.deveRetornarFalhaQuandoOcorreFalhaDeRede" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PB_tp2_v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="METHOD_NAME" value="deveRetornarFalhaQuandoOcorreFalhaDeRede" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioAdvancedTest.deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PB_tp2_v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="METHOD_NAME" value="deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioAdvancedTest.testEntradaInvalida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PB_tp2_v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="METHOD_NAME" value="testEntradaInvalida" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FuncionarioAdvancedTest.testTimeoutSimulado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PB_tp2_v2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.infnet.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.infnet.tests" />
+      <option name="MAIN_CLASS_NAME" value="br.com.infnet.tests.FuncionarioAdvancedTest" />
+      <option name="METHOD_NAME" value="testTimeoutSimulado" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,7 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FuncionarioAdvancedTest" />
+        <item itemvalue="JUnit.FuncionarioAdvancedTest.testTimeoutSimulado" />
+        <item itemvalue="JUnit.FuncionarioAdvancedTest.deveRetornarFalhaTimeoutQuandoOcorreTimeoutNaRede" />
+        <item itemvalue="JUnit.FuncionarioAdvancedTest.deveRetornarFalhaQuandoOcorreFalhaDeRede" />
+        <item itemvalue="JUnit.FuncionarioAdvancedTest.testEntradaInvalida" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +202,9 @@
       <workItem from="1764940158277" duration="1271000" />
       <workItem from="1764941472134" duration="35000" />
       <workItem from="1765022684725" duration="292000" />
-      <workItem from="1765023113630" duration="1697000" />
+      <workItem from="1765023113630" duration="4249000" />
+      <workItem from="1765040868706" duration="785000" />
+      <workItem from="1765466777985" duration="5040000" />
     </task>
     <task id="LOCAL-00001" summary="testando">
       <option name="closed" value="true" />
@@ -121,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765024382807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="testando">
+      <option name="closed" value="true" />
+      <created>1765025010122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765025010122</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
