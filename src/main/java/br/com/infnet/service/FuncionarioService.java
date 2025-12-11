@@ -21,16 +21,44 @@ public class FuncionarioService {
 
     private final RedeSimulada rede;
 
+    // FAIL EARLY: impede estado inválido já no construtor
     public FuncionarioService() {
-        this.rede = null; // mantém compatibilidade
+        this.rede = null;
+        inicializarRegistrosPadrao();
+    }
+
+    public FuncionarioService(RedeSimulada rede) {
+        if (rede == null) { // fail early
+            throw new IllegalArgumentException("Instância de rede não pode ser nula.");
+        }
+        this.rede = rede;
+        inicializarRegistrosPadrao();
+    }
+
+    private void inicializarRegistrosPadrao() {
         addFuncionario("Edward Newgate", "Senior");
         addFuncionario("Portgas Ace", "Junior");
     }
 
-    public FuncionarioService(RedeSimulada rede) {
-        this.rede = rede;
-        addFuncionario("Edward Newgate", "Senior");
-        addFuncionario("Portgas Ace", "Junior");
+    // FAIL EARLY: garante que nome/cargo são válidos
+    private void validate(String nome, String cargo) {
+        if (nome == null || cargo == null) {
+            throw new IllegalArgumentException("Nome ou cargo não podem ser nulos.");
+        }
+        nome = nome.trim();
+        cargo = cargo.trim();
+
+        if (nome.isBlank() || cargo.isBlank()) {
+            throw new IllegalArgumentException("Nome e cargo não podem ser vazios.");
+        }
+
+        if (nome.length() > 50 || cargo.length() > 50) {
+            throw new IllegalArgumentException("Nome ou cargo excedem 50 caracteres.");
+        }
+
+        if (nome.contains("  ") || cargo.contains("  ")) {
+            throw new IllegalArgumentException("Nome ou cargo contêm espaços inválidos.");
+        }
     }
 
     public void addFuncionario(String nome, String cargo) {
@@ -39,6 +67,11 @@ public class FuncionarioService {
     }
 
     public Optional<Funcionario> findById(int id) {
+        // fail early
+        if (id <= 0) {
+            return Optional.empty();
+        }
+
         return funcionarios.stream()
                 .filter(f -> f.getId() == id)
                 .findFirst();
@@ -48,8 +81,9 @@ public class FuncionarioService {
         validate(nome, cargo);
 
         Optional<Funcionario> f = findById(id);
+
         if (f.isEmpty()) {
-            return false;
+            return false; // fail gracefully
         }
 
         Funcionario funcionario = f.get();
@@ -59,6 +93,9 @@ public class FuncionarioService {
     }
 
     public boolean deleteFuncionario(int id) {
+        if (id <= 0) {  // fail early
+            return false;
+        }
         return funcionarios.removeIf(f -> f.getId() == id);
     }
 
@@ -66,18 +103,11 @@ public class FuncionarioService {
         return Collections.unmodifiableList(funcionarios);
     }
 
-    private void validate(String nome, String cargo) {
-        if (nome == null || nome.isBlank() || cargo == null || cargo.isBlank()) {
-            throw new IllegalArgumentException("Nome e cargo não podem ser vazios.");
-        }
-        if (nome.length() > 50 || cargo.length() > 50) {
-            throw new IllegalArgumentException("Nome ou cargo excedem 50 caracteres.");
-        }
-    }
-
+    // FAIL GRACEFULLY NA REDE
     public String sincronizarComServidor() {
+
         if (rede == null) {
-            return "SEM_REDE";
+            return "SEM_REDE"; // graceful
         }
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -85,28 +115,23 @@ public class FuncionarioService {
         try {
             Future<String> future = executor.submit(rede::fetchData);
 
-            // timeout de 1 segundo
+            // timeout curto
             String resposta = future.get(1, TimeUnit.SECONDS);
 
             if (resposta == null) {
-                return "FALHA";
+                return "RESPOSTA_INVALIDA"; // graceful
             }
 
             return resposta;
 
         } catch (TimeoutException e) {
-            // caso a chamada exceda 1s
-            return "FALHA_TIMEOUT";
+            return "FALHA_TIMEOUT";  // graceful
 
         } catch (Exception e) {
-            // outras falhas (RuntimeException simulada, etc.)
-            return "FALHA";
+            return "FALHA_REDE"; // graceful
 
         } finally {
-            // tenta encerrar a thread do executor
             executor.shutdownNow();
         }
     }
 }
-
-

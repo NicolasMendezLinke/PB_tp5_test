@@ -23,7 +23,7 @@ public class FuncionarioAdvancedTest {
 
         String resultado = service.sincronizarComServidor();
 
-        assertEquals("FALHA", resultado);
+        assertEquals("FALHA_REDE", resultado); // atualizado
 
         Mockito.verify(redeMock).fetchData();
     }
@@ -44,7 +44,6 @@ public class FuncionarioAdvancedTest {
     }
 
 
-
     @Test
     void testEntradaInvalida() {
         RedeSimulada redeMock = Mockito.mock(RedeSimulada.class);
@@ -53,6 +52,6 @@ public class FuncionarioAdvancedTest {
 
         FuncionarioService service = new FuncionarioService(redeMock);
 
-        assertEquals("FALHA", service.sincronizarComServidor());
+        assertEquals("RESPOSTA_INVALIDA", service.sincronizarComServidor()); // atualizado
     }
 }
