@@ -1,0 +1,58 @@
+name: Selenium Post-Deploy Tests
+
+on:
+  workflow_run:
+    workflows: ["CI-CD Pipeline"]
+    types: [completed]
+    branches: [main, master]
+
+jobs:
+  selenium_tests:
+    name: Executar Selenium após deploy
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Instalar Maven
+        run: sudo apt-get update && sudo apt-get install -y maven
+
+      - name: Instalar Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Instalar ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
+
+      - name: Compilar aplicação
+        run: mvn -B -DskipTests package
+
+      - name: Subir aplicação em background
+        run: |
+          nohup java -jar target/*.jar > selenium-server.log 2>&1 &
+          echo "Aguardando aplicação subir..."
+          sleep 15
+
+      - name: Rodar testes Selenium
+        run: mvn test -Dtest=*WebTest -Dselenium.headless=true
+
+      - name: Upload de screenshots de falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-screenshots
+          path: screenshots/
+
+      - name: Upload de logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-post-deploy-logs
+          path: selenium-server.log
